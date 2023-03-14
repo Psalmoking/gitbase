@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Form</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form>
+      <label for="name">Name</label>
+      <input class="name" type="text" name="name" required="required" />
+      <label for="email">Email</label>
+      <input class="email" type="email" name="email" />
+      <label for="gender">Gender</label>
+      <input type="radio" name="gender" value="male" />Male
+      <input type="radio" name="gender" value="female" />Female
+      <label for="password">Password</label>
+      <input class="password" type="password" name="password" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script type="text/javascript">
+      const form = document.querySelector("form");
+      const nameInputEl = document.querySelector(".name");
+      const emailInputEl = document.querySelector(".email");
+      const passwordInputEl = document.querySelector(".password");
+      console.log(form);
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        console.log(nameInputEl.value);
+        console.log(emailInputEl.value);
+        console.log(passwordInputEl.value);
+        if (!nameInputEl.value) {
+          nameInputEl.focus();
+        } else if (!emailInputEl.value) {
+          emailInputEl.focus();
+        } else if (!passwordInputEl.value) {
+          passwordInputEl.focus();
+        } else {
+          alert("SUCCESSFUL SUBMISSION");
+        }
+      });
+    </script>
+  </body>
+</html>
